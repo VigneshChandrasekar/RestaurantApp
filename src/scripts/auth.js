@@ -9,8 +9,7 @@ function getAccessToken() {
     return readCookie(accessTokenCookieName);
 };
 
-async function getAnononymousToken() {
-    let accessToken;
+function registerUser(user) {    
     try {
         $.ajax({
             type: 'POST',
@@ -26,61 +25,52 @@ async function getAnononymousToken() {
             },
             datatype: 'json',
             cache: false,
-            success: function (data) {                
-                if (data.access_token) {
-                    parseJwt(data.access_token);
-                    accessToken = data.access_token;                    
-                }
-            },
-            error: function (xhr, status, message) {
-                console.log("error getting response", status, message);
-            }
-        });
-    }
-    catch(e) {
-        throw new Error('Invalid token');
-    }
-    return accessToken;
-};
-
-
-async function registerUser() {
-    let accessToken = await getAnononymousToken();
-    console.log(accessToken);
-    try {
-        $.ajax({
-            type: 'POST',
-            url: 'https://sandboxapi.ordercloud.io/v1/buyers/Shoppers/users',
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer " + accessToken
-            },
-            data: {
-                "Active": true,
-                "Username": "test2@gmail.com",
-                "Password": "Google@123",
-                "FirstName": "Vignesh",
-                "LastName": "Chandrasekar",
-                "Email": "test2@gmail.com",
-                "Phone": "9500547521"
-            },
-            datatype: 'json',
-            cache: false,
-            async: true,
             success: function (data) {
-                if (data) {
-                    console.log(data);
+                if (data.access_token) {
+                    console.log('Authenticated Successfully.');
+                    parseJwt(data.access_token);
+                    accessToken = data.access_token;
+                    if (accessToken) {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'https://sandboxapi.ordercloud.io/v1/buyers/Shoppers/users',
+                            headers: {
+                                "Content-Type": "application/json",
+                                "Authorization": "Bearer " + accessToken
+                            },
+                            data: {
+                                "Active": true,
+                                "Username": user.Email,
+                                "Password": user.Password,
+                                "FirstName": user.FirstName,
+                                "LastName": user.LastName,
+                                "Email": user.Email,
+                                "Phone": user.Phone
+                            },
+                            datatype: 'json',
+                            cache: false,
+                            async: true,
+                            success: function (data) {
+                                if (data) {
+                                    console.log('User Created Successfully.');
+                                    console.log(data);
+                                }
+                            },
+                            error: function (xhr, status, message) {
+                                console.log("error getting response", status, message);
+                            }
+                        });
+                    }
                 }
             },
             error: function (xhr, status, message) {
                 console.log("error getting response", status, message);
             }
-        });
+        });        
     }
     catch (e) {
         throw new Error('Invalid request');
-    }
-    return accessToken;
+    }    
 };
 
 function parseJwt(token) {
