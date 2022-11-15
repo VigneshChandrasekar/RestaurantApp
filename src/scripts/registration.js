@@ -11,7 +11,7 @@ function RegistrationViewModel () {
         var loadingText = $btn.data('loading-text');
         var buttonText = $btn.data('button-text');
         $btn.text(loadingText).addClass('disabled');
-        var response = await registerUser();
+        var response = registerUser();
         console.log(response);
         $btn.text(buttonText).removeClass('disabled');
     };

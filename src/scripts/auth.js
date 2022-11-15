@@ -66,6 +66,7 @@ async function registerUser() {
             },
             datatype: 'json',
             cache: false,
+            async: true,
             success: function (data) {
                 if (data) {
                     console.log(data);
