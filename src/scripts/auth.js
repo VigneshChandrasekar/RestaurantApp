@@ -35,9 +35,9 @@ function registerUser(user) {
                             type: 'POST',
                             url: 'https://sandboxapi.ordercloud.io/v1/buyers/Shoppers/users',
                             headers: {                                
-                                "Authorization": "Bearer " + accessToken
-                            },
-                            contentType: "application/json",
+                                "Authorization": "Bearer " + accessToken,
+                                "Content-Type": "application/json;charset=utf-8"
+                            },                            
                             data: {
                                 Active: true,
                                 Username: "test@ty.com",
