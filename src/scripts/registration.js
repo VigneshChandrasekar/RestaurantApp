@@ -4,7 +4,7 @@ function RegistrationViewModel () {
     self.registrationFormSubmit = function (formRootElement) {
         var $btn = $('.button');
         var loadingText = $btn.data('loading-text');
-        var buttonText = $btn.data('Create Account');
+        var buttonText = $btn.data('button-text');
         $btn.text(loadingText).addClass('disabled');
         console.log(self.firstName());        
         $btn.text(buttonText).removeClass('disabled');
