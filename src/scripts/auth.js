@@ -25,10 +25,13 @@ function getAnononymousToken() {
             },
             datatype: 'json',
             cache: false,
-            success: function (data) {                              
+            success: function (data) {
+                console.log(data);
+                console.log(data.access_token);
                 if (data.access_token) {
                     parseJwt(data.access_token);
                     accessToken = data.access_token;
+                    console.log(accessToken);
                 }
             },
             error: function (xhr, status, message) {
