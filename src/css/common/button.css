@@ -1,0 +1,25 @@
+body {
+font-family: "HelveticaNeueLTW01-45Light", Helvetica,sans-serif;
+}
+
+.bg-button-tilt-700 {
+    background-color: #34a0a2 !important;
+    font-weight:700;
+    color: #fff;   
+    border-radius: 0 !important; 
+}
+
+.bg-button-tilt-700:hover {
+    background-color: transparent !important;
+    font-weight:700;
+    color: #34a0a2 !important;
+    border-color: #34a0a2 !important;
+}
+
+.bg-button-white-700 {
+    background-color: #fff !important;
+    font-weight:700;
+    color: #34a0a2 !important;
+    border-color: #34a0a2 !important;
+    border-radius: 0 !important;
+}
