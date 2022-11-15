@@ -42,6 +42,7 @@ function getAnononymousToken() {
     return accessToken;
 };
 
+
 function registerUser() {
     let accessToken = getAnononymousToken();
     try {
