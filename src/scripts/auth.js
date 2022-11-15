@@ -42,6 +42,43 @@ function getAnononymousToken() {
     return accessToken;
 };
 
+function registerUser() {
+    let accessToken = getAnononymousToken();
+    try {
+        $.ajax({
+            type: 'POST',
+            url: 'https://sandboxapi.ordercloud.io/v1/buyers/Shoppers/users',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + accessToken
+            },
+            data: {
+                "Active": true,
+                "Username": "test2@gmail.com",
+                "Password": "Google@123",
+                "FirstName": "Vignesh",
+                "LastName": "Chandrasekar",
+                "Email": "test2@gmail.com",
+                "Phone": "9500547521"
+            },
+            datatype: 'json',
+            cache: false,
+            success: function (data) {
+                if (data) {
+                    console.log(data);
+                }
+            },
+            error: function (xhr, status, message) {
+                console.log("error getting response", status, message);
+            }
+        });
+    }
+    catch (e) {
+        throw new Error('Invalid request');
+    }
+    return accessToken;
+};
+
 function parseJwt(token) {
     try {
         var base64Url = token.split('.')[1];

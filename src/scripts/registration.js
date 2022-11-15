@@ -13,8 +13,7 @@ function RegistrationViewModel () {
         var loadingText = $btn.data('loading-text');
         var buttonText = $btn.data('button-text');
         $btn.text(loadingText).addClass('disabled');
-        var accessToken = getAnononymousToken();
-        console.log(accessToken);
+        registerUser();        
         $btn.text(buttonText).removeClass('disabled');
     };
 };
