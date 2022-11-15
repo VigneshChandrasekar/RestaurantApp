@@ -37,6 +37,7 @@ function registerUser(user) {
                             headers: {                                
                                 "Authorization": "Bearer " + accessToken
                             },
+                            contentType: "application/json",
                             data: {
                                 Active: true,
                                 Username: "test@ty.com",
