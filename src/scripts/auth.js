@@ -34,8 +34,7 @@ function registerUser(user) {
                         $.ajax({
                             type: 'POST',
                             url: 'https://sandboxapi.ordercloud.io/v1/buyers/Shoppers/users',
-                            headers: {
-                                "Content-Type": "application/json",
+                            headers: {                                
                                 "Authorization": "Bearer " + accessToken
                             },
                             data: {
