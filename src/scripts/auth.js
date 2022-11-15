@@ -9,7 +9,7 @@ function getAccessToken() {
     return readCookie(accessTokenCookieName);
 };
 
-function getAnononymousToken() {
+async function getAnononymousToken() {
     let accessToken;
     try {
         $.ajax({
