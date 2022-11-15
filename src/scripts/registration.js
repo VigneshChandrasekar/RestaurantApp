@@ -2,8 +2,9 @@ function RegistrationViewModel () {
     var self = this;
     self.firstName = ko.observable();
     self.registrationFormSubmit = function (formRootElement) {
-        console.log(self.firstName());
         var $btn = $('.button');
+        $btn.text('Registering...');
+        console.log(self.firstName());        
         $btn.button('reset');
     };
 };
