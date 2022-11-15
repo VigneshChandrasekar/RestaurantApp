@@ -4,16 +4,15 @@ function RegistrationViewModel () {
     self.lastName = ko.observable();
     self.email = ko.observable();
     self.phoneNumber = ko.observable();
-    self.password = ko.observable();
-
-    var accessTokenCookieName = '.access-token';
+    self.password = ko.observable();    
 
     self.registrationFormSubmit = function (formRootElement) {
         var $btn = $('.button');
         var loadingText = $btn.data('loading-text');
         var buttonText = $btn.data('button-text');
         $btn.text(loadingText).addClass('disabled');
-        registerUser();        
+        var response = await registerUser();
+        console.log(response);
         $btn.text(buttonText).removeClass('disabled');
     };
 };

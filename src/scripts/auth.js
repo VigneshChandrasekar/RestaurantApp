@@ -18,6 +18,7 @@ function getAnononymousToken() {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
+            async: true,
             data: {
                 client_id: "68583AF0-A4C8-497B-A3A8-F179A0D8E207",
                 client_secret: "9xwiqzc48nyZDVJ2bCajovMNlMjuYxa2Fx6KkFLtOOCuSIOdCSeRSkgvcULt",
@@ -25,13 +26,10 @@ function getAnononymousToken() {
             },
             datatype: 'json',
             cache: false,
-            success: function (data) {
-                console.log(data);
-                console.log(data.access_token);
+            success: function (data) {                
                 if (data.access_token) {
                     parseJwt(data.access_token);
-                    accessToken = data.access_token;
-                    console.log(accessToken);
+                    accessToken = data.access_token;                    
                 }
             },
             error: function (xhr, status, message) {
@@ -46,8 +44,9 @@ function getAnononymousToken() {
 };
 
 
-function registerUser() {
-    let accessToken = getAnononymousToken();
+async function registerUser() {
+    let accessToken = await getAnononymousToken();
+    console.log(accessToken);
     try {
         $.ajax({
             type: 'POST',
