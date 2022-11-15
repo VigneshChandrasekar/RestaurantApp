@@ -3,9 +3,11 @@ function RegistrationViewModel () {
     self.firstName = ko.observable();
     self.registrationFormSubmit = function (formRootElement) {
         var $btn = $('.button');
-        $btn.text('Registering...');
+        var loadingText = $btn.data('loading-text');
+        var buttonText = $btn.data('Create Account');
+        $btn.text(loadingText).addClass('disabled');
         console.log(self.firstName());        
-        $btn.button('reset');
+        $btn.text(buttonText).removeClass('disabled');
     };
 };
 
