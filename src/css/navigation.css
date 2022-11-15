@@ -8,5 +8,5 @@
 }
 
 .text-link-color:hover, .text-link-color:focus {
-    color: rgb(235 23 0 / var(--tw-bg-opacity));
+    color: rgb(235 23 0 / var(--tw-bg-opacity)) !important;
 }
