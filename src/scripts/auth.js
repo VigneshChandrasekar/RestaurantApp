@@ -38,7 +38,15 @@ function registerUser(user) {
                                 "Content-Type": "application/json",
                                 "Authorization": "Bearer " + accessToken
                             },
-                            data: { data: JSON.stringify(user) },
+                            data: {
+                                Active: true,
+                                Username: "test@ty.com",
+                                Password: "Google@123",
+                                FirstName: "Vignesh",
+                                LastName: "Chandrasekar",
+                                Email: "test@ty.com",
+                                Phone: "9500547521"
+                            },
                             datatype: 'json',
                             cache: false,
                             async: true,
