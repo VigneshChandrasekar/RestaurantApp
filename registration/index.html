@@ -37,26 +37,26 @@
                     <br />
                     <div>
                         <label for="first-name" class="sr-only">Last Name</label>
-                        <input id="last-name" name="lastname" type="text" autocomplete="off" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm" placeholder="Last Name">
+                        <input data-bind="textInput: firstName" id="last-name" name="lastname" type="text" autocomplete="off" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm" placeholder="Last Name">
                     </div>
                 </div>
 
                 <div class="shadow-sm -space-y-px">
                     <div>
                         <label for="email-address" class="sr-only">Email</label>
-                        <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm" placeholder="Email">
+                        <input data-bind="textInput: lastName" id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm" placeholder="Email">
                     </div>
                     <br />
                     <div>
                         <label for="phone-number" class="sr-only">Phone Number</label>
-                        <input id="phone-number" name="phonenumber" type="text" autocomplete="off" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm" placeholder="Phone Number">
+                        <input data-bind="textInput: phoneNumber" id="phone-number" name="phonenumber" type="text" autocomplete="off" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm" placeholder="Phone Number">
                     </div>
                 </div>
 
                 <div class="shadow-sm -space-y-px">
                     <div>
                         <label for="password" class="sr-only">Password</label>
-                        <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm" placeholder="Password">
+                        <input data-bind="textInput: password" id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm" placeholder="Password">
                     </div>
                     <br />
                     <div>
