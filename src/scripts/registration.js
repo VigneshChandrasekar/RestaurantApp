@@ -11,13 +11,16 @@ function RegistrationViewModel () {
         var loadingText = $btn.data('loading-text');
         var buttonText = $btn.data('button-text');
         $btn.text(loadingText).addClass('disabled');
-        registerUser({
-            Email: self.email(),
-            FirstName: self.firstName(),
-            LastName: self.lastName(),
-            Phone: self.phoneNumber(),
-            Password: self.password(),
-        });
+        var req = {
+            "Active": true,
+            "Username": self.email(),
+            "Password": self.password(),
+            "FirstName": self.firstName(),
+            "LastName": self.lastName(),
+            "Email": self.email(),
+            "Phone": self.phoneNumber()
+        };
+        registerUser(req);
         $btn.text(buttonText).removeClass('disabled');
     };
 };

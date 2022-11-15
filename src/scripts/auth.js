@@ -38,15 +38,7 @@ function registerUser(user) {
                                 "Content-Type": "application/json",
                                 "Authorization": "Bearer " + accessToken
                             },
-                            data: {
-                                "Active": true,
-                                "Username": user.Email,
-                                "Password": user.Password,
-                                "FirstName": user.FirstName,
-                                "LastName": user.LastName,
-                                "Email": user.Email,
-                                "Phone": user.Phone
-                            },
+                            data: { data: JSON.stringify(user) },
                             datatype: 'json',
                             cache: false,
                             async: true,
