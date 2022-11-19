@@ -11,13 +11,15 @@ function getAccessToken() {
 
 function registerUser(user) {    
     try {
-        var userParams = {};
-        userParams.Active = true;
-        userParams.Username = "test@ty.com";
-        userParams.Password = "Google@123";
-        userParams.FirstName = "Vignesh";
-        userParams.LastName = "Chandrasekar";
-        userParams.Email = "test@ty.com";
+        var userParams = {
+            "Active": true,
+            "Username": "test5676@gmail.com",
+            "Password": "Google@123",
+            "FirstName": "Vignesh",
+            "LastName": "Chandrasekar",
+            "Email": "test@gmail.com",
+            "Phone": "9500547521"
+        };        
         $.ajax({
             type: 'POST',
             url: 'https://sandboxapi.ordercloud.io/oauth/token',
