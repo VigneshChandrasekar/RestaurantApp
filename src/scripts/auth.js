@@ -37,18 +37,18 @@ function registerUser(user) {
                     console.log('Authenticated Successfully.');
                     parseJwt(data.access_token);
                     accessToken = data.access_token;
+                    console.log(accessToken);
                     if (accessToken) {
                         $.ajax({
                             type: 'POST',
                             url: 'https://sandboxapi.ordercloud.io/v1/buyers/Shoppers/users',
-                            headers: {                                
-                                "Authorization": "Bearer " + accessToken,
-                                "Content-Type": "application/json"
-                            },                            
-                            data: userParams,
-                            datatype: 'json',
+                            beforeSend: function (xhr) {
+                                xhr.setRequestHeader("Authorization", 'Bearer ' + accessToken);
+                            },
+                            data: userParams,                            
                             cache: false,
                             async: true,
+                            contentType: 'application/json',
                             success: function (data2) {
                                 if (data2) {
                                     console.log('User Created Successfully.');
