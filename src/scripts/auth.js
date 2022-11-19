@@ -11,6 +11,13 @@ function getAccessToken() {
 
 function registerUser(user) {    
     try {
+        var userParams = {};
+        userParams.Active = true;
+        userParams.Username = "test@ty.com";
+        userParams.Password = "Google@123";
+        userParams.FirstName = "Vignesh";
+        userParams.LastName = "Chandrasekar";
+        userParams.Email = "test@ty.com";
         $.ajax({
             type: 'POST',
             url: 'https://sandboxapi.ordercloud.io/oauth/token',
@@ -38,22 +45,14 @@ function registerUser(user) {
                                 "Authorization": "Bearer " + accessToken,
                                 "Content-Type": "application/json"
                             },                            
-                            data: {
-                                Active: true,
-                                Username: "test@ty.com",
-                                Password: "Google@123",
-                                FirstName: "Vignesh",
-                                LastName: "Chandrasekar",
-                                Email: "test@ty.com",
-                                Phone: "9500547521"
-                            },
+                            data: userParams,
                             datatype: 'json',
                             cache: false,
                             async: true,
-                            success: function (data) {
-                                if (data) {
+                            success: function (data2) {
+                                if (data2) {
                                     console.log('User Created Successfully.');
-                                    console.log(data);
+                                    console.log(data2);
                                 }
                             },
                             error: function (xhr, status, message) {
