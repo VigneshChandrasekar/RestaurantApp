@@ -1,0 +1,12 @@
+.bg-red {
+    --tw-bg-opacity: 1;
+    background-color: rgb(235 23 0 / var(--tw-bg-opacity));
+}
+
+.text-link-color {
+    color: #000 !important;
+}
+
+.text-link-color:hover, .text-link-color:focus {
+    color: rgb(235 23 0 / var(--tw-bg-opacity)) !important;
+}

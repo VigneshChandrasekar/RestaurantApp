@@ -1,292 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Basic -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DoorDash</title>
-    <meta name="description" content="Free open source Tailwind CSS Store template">
-    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!--<link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">-->
-    <!--Replace with your tailwind.css once created-->
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://restaurant-app-eta-seven.vercel.app/src/css/common/button.css">
-    <link rel="stylesheet" href="https://restaurant-app-eta-seven.vercel.app/src/css/navigation.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <style>
-        .work-sans {
-            font-family: 'Work Sans', sans-serif;
-        }
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        #menu-toggle:checked + #menu {
-            display: block;
-        }
+	<!-- Site Metas -->
+	<title>Home</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-        .hover\:grow {
-            transition: all 0.3s;
-            transform: scale(1);
-        }
+	<!-- Site Icons -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-            .hover\:grow:hover {
-                transform: scale(1.02);
-            }
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- Site CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="css/responsive.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/custom.css">
 
-        .carousel-open:checked + .carousel-item {
-            position: static;
-            opacity: 100;
-        }
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
 
-        .carousel-item {
-            -webkit-transition: opacity 0.6s ease-out;
-            transition: opacity 0.6s ease-out;
-        }
-
-        #carousel-1:checked ~ .control-1,
-        #carousel-2:checked ~ .control-2,
-        #carousel-3:checked ~ .control-3 {
-            display: block;
-        }
-
-        .carousel-indicators {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            bottom: 2%;
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 10;
-        }
-
-        #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-        #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-        #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-            color: #000;
-            /*Set to match the Tailwind colour you want the active one to be */
-        }
-    </style>
 </head>
 
-<body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="images/logo.png" alt="" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="about.html">Add restaurant</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Account</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="/signin">Sign In</a>
+								<a class="dropdown-item" href="/signup">Sign Up</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
 
-    <nav aria-label="Top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="border-b border-gray-200">
-            <div class="h-16 flex items-center">
-                <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
-                <button type="button" class="bg-white p-2 rounded-md text-gray-400 lg:hidden">
-                    <span class="sr-only">Open menu</span>
-                    <!-- Heroicon name: outline/menu -->
-                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
 
-                <!-- Logo -->
-                <div class="ml-4 flex lg:ml-0">
-                    <a href="/">
-                        <svg width="112" height="13" viewBox="0 0 361.1 42" fill="#FF3008"><path d="M8.62,8.66V33.38h6.32A12.21,12.21,0,0,0,27,21,12,12,0,0,0,14.94,8.66ZM14.94.91C26.72.91,35.63,9.81,35.63,21S26.72,41.14,14.94,41.14H1a1,1,0,0,1-1-1V1.95a1,1,0,0,1,1-1Z"></path><path d="M66,34.24A13.22,13.22,0,1,0,52.82,21,13.24,13.24,0,0,0,66,34.24M66,0C78.4,0,87.88,9.53,87.88,21S78.4,42,66,42,44.2,32.52,44.2,21,53.68,0,66,0"></path><path d="M118,34.24A13.22,13.22,0,1,0,104.75,21,13.24,13.24,0,0,0,118,34.24M118,0c12.36,0,21.84,9.48,21.84,21S130.32,42,118,42,96.12,32.52,96.12,21,105.6,0,118,0"></path><path d="M168.75,8.66h-8.91V19.3h8.91a5.22,5.22,0,0,0,5.46-5.17,5.28,5.28,0,0,0-5.46-5.46M151.22,1.95a1,1,0,0,1,1-1H169c8,0,13.79,5.86,13.79,13.22a13,13,0,0,1-7.18,11.78l7.74,13.68a1,1,0,0,1-.91,1.56h-6.79a1,1,0,0,1-.91-.54l-7.46-13.54h-7.47v13a1,1,0,0,1-1,1h-6.54a1,1,0,0,1-1-1Z"></path><path d="M205.26,8.85V33.57h6.32a12.21,12.21,0,0,0,12.07-12.36A12,12,0,0,0,211.58,8.85Zm6.32-7.76c11.78,0,20.69,8.91,20.69,20.12s-8.91,20.12-20.69,20.12h-13.9a1,1,0,0,1-1-1V2.14a1,1,0,0,1,1-1Z"></path><path d="M258.56,10.92l-4.89,13.22h9.77Zm-7.76,20.69-3.2,8.8a1,1,0,0,1-1,.69h-6.94a1,1,0,0,1-1-1.42l15-38.15a1,1,0,0,1,1-.66h7.77a1,1,0,0,1,1,.66l15,38.15a1,1,0,0,1-1,1.42h-6.94a1,1,0,0,1-1-.69l-3.2-8.8Z"></path><path d="M286.48,11.78C286.48,5.46,291.94,0,300.56,0a17.84,17.84,0,0,1,12.51,4.71,1,1,0,0,1,0,1.47L309.22,10a1,1,0,0,1-1.42,0,10.12,10.12,0,0,0-6.67-2.63c-3.45,0-6,2-6,4.31,0,7.47,20.38,3.16,20.38,17.53C315.5,36.49,310,42,300.27,42a20.41,20.41,0,0,1-14.54-5.84,1,1,0,0,1,0-1.47l3.72-3.72a1,1,0,0,1,1.45,0,12.85,12.85,0,0,0,8.79,3.58c4.31,0,7.15-2.3,7.15-5.18,0-7.47-20.37-3.16-20.37-17.53"></path><path d="M352.47,1.9V17H335.22V1.9a1,1,0,0,0-1-1h-6.54a1,1,0,0,0-1,1V40.05a1,1,0,0,0,1,1h6.54a1,1,0,0,0,1-1V24.71h17.24V40.05a1,1,0,0,0,1,1H360a1,1,0,0,0,1-1V1.9a1,1,0,0,0-1-1h-6.54A1,1,0,0,0,352.47,1.9Z"></path></svg>
-                    </a>
-                </div>
+	<div class="location-suggestions">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<select class="custom-select d-block form-control" id="guest" required data-error="Choose your location">
+									<option disabled selected>Choose your location</option>
+									<option value="Chennai">Chennai</option>
+									<option value="Bangalore">Bangalore</option>
+									<option value="Coimbatore">Coimbatore</option>
+									<option value="Mumbai">Mumbai</option>
+									<option value="Kochi">Kochi</option>
+								</select>
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-                <div class="ml-auto flex items-center">
-                    <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                        <a href="#" class="text-sm font-medium text-link-color">Add restaurant</a>
-                        <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-                        <a href="/signin" class="text-sm font-medium text-link-color">Log in</a>
-                        <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-                        <a href="/registration" class="text-sm font-medium text-link-color">Sign up</a>
-                    </div>
-                    <!-- Cart -->
-                    <div class="ml-4 flow-root lg:ml-6">
-                        <a href="#" class="group -m-2 p-2 flex items-center">
-                            <!-- Heroicon name: outline/shopping-bag -->
-                            <svg class="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                            </svg>
-                            <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
-                            <span class="sr-only">items in cart, view bag</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+	<!-- Start slides -->
+	<div id="slides" class="cover-slides">
+		<ul class="slides-container">
+			<li class="text-left">
+				<img src="images/slider-01.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Welcome To <br> Live Dinner Restaurant</strong></h1>
+							<p class="m-b-40">
+								See how your users experience your website in realtime or view  <br>
+								trends to see any changes in performance over time.
+							</p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-left">
+				<img src="images/slider-02.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Welcome To <br> Live Dinner Restaurant</strong></h1>
+							<p class="m-b-40">
+								See how your users experience your website in realtime or view  <br>
+								trends to see any changes in performance over time.
+							</p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-left">
+				<img src="images/slider-03.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Welcome To <br> Yamifood Restaurant</strong></h1>
+							<p class="m-b-40">
+								See how your users experience your website in realtime or view  <br>
+								trends to see any changes in performance over time.
+							</p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="slides-navigation">
+			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+		</div>
+	</div>
+	<!-- End slides -->
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
+					<div class="inner-column">
+						<h1>Welcome To <span>Live Dinner Restaurant</span></h1>
+						<h4>Little Story</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
+						<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. Sed aliquam metus lorem, a pellentesque tellus pretium a. Nulla placerat elit in justo vestibulum, et maximus sem pulvinar.</p>
+						<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<img src="images/about-img.jpg" alt="" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End About -->
+	<!-- Start QT -->
+	<div class="qt-box qt-background">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 ml-auto mr-auto text-center">
+					<p class="lead ">
+						" If you're not the one cooking, stay out of the way and compliment the chef. "
+					</p>
+					<span class="lead">Michael Strahan</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End QT -->
+	<!-- Start Menu -->
+	<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Special Menu</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+					</div>
+				</div>
+			</div>
 
-    <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
-        <div class="container flex px-3 py-8 ">
-            <div class="w-full mx-auto flex flex-wrap">
-                <div class="absolute inset-x-0 text-sm text-gray-500">
-                    <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                    <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
+			<div class="row inner-menu-box">
+				<div class="col-3">
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">All</a>
+						<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Drinks</a>
+						<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Lunch</</a>
+						<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Dinner</a>
+					</div>
+				</div>
 
-                    <div class="relative bg-white">
-                        <div class="max-w-7xl mx-auto px-8">
-                            <div class="grid grid-cols-2 gap-y-10 gap-x-8 py-16">
-                                <div class="col-start-2 grid grid-cols-2 gap-x-8">
-                                    <div class="group relative text-base sm:text-sm">
-                                        <div class="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg" alt="Drawstring top with elastic loop closure and textured interior padding." class="object-center object-cover">
-                                        </div>
-                                        <a href="#" class="mt-6 block font-medium text-gray-900">
-                                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
-                                            New Arrivals
-                                        </a>
-                                        <p aria-hidden="true" class="mt-1">Shop now</p>
-                                    </div>
+				<div class="col-9">
+					<div class="tab-content" id="v-pills-tabContent">
+						<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+							<div class="row">
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="images/img-01.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Drinks 1</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $7.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                    <div class="group relative text-base sm:text-sm">
-                                        <div class="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg" alt="Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt." class="object-center object-cover">
-                                        </div>
-                                        <a href="#" class="mt-6 block font-medium text-gray-900">
-                                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
-                                            Artwork Tees
-                                        </a>
-                                        <p aria-hidden="true" class="mt-1">Shop now</p>
-                                    </div>
-                                </div>
-                                <div class="row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
-                                    <div>
-                                        <p id="Clothing-heading" class="font-medium text-gray-900">
-                                            Top Cities
-                                        </p>
-                                        <ul role="list" aria-labelledby="Clothing-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    New York City
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="images/img-02.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Drinks 2</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $9.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Los Angeles
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="images/img-03.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Drinks 3</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $10.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Toronto
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="images/img-04.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Lunch 1</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $15.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Chicago
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="images/img-05.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Lunch 2</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $18.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Houston
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="images/img-06.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Lunch 3</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $20.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Brooklyn
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="images/img-07.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Dinner 1</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $25.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Browse All
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="images/img-08.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Dinner 2</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $22.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                    <div>
-                                        <p id="Accessories-heading" class="font-medium text-gray-900">
-                                            Accessories
-                                        </p>
-                                        <ul role="list" aria-labelledby="Accessories-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Watches
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="images/img-09.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Dinner 3</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $24.79</h5>
+										</div>
+									</div>
+								</div>
+							</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Wallets
-                                                </a>
-                                            </li>
+						</div>
+						<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+							<div class="row">
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="images/img-01.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Drinks 1</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $7.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Bags
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="images/img-02.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Drinks 2</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $9.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Sunglasses
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="images/img-03.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Drinks 3</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $10.79</h5>
+										</div>
+									</div>
+								</div>
+							</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Hats
-                                                </a>
-                                            </li>
+						</div>
+						<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+							<div class="row">
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="images/img-04.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Lunch 1</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $15.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Belts
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="images/img-05.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Lunch 2</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $18.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                    <div>
-                                        <p id="Brands-heading" class="font-medium text-gray-900">
-                                            Brands
-                                        </p>
-                                        <ul role="list" aria-labelledby="Brands-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Re-Arranged
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="images/img-06.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Lunch 3</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $20.79</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+							<div class="row">
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="images/img-07.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Dinner 1</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $25.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Counterfeit
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="images/img-08.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Dinner 2</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $22.79</h5>
+										</div>
+									</div>
+								</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    Full Nelson
-                                                </a>
-                                            </li>
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="images/img-09.jpg" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Special Dinner 3</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> $24.79</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-                                            <li class="flex">
-                                                <a href="#" class="hover:text-gray-800">
-                                                    My Way
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://restaurant-app-eta-seven.vercel.app/src/scripts/site.js"></script>
-    <script src="https://restaurant-app-eta-seven.vercel.app/src/scripts/auth.js"></script>
-    <script src="https://restaurant-app-eta-seven.vercel.app/src/scripts/cookie.js"></script>
-    <script src="https://restaurant-app-eta-seven.vercel.app/src/scripts/registration.js"></script>
+		</div>
+	</div>
+	<!-- End Menu -->
+	<!-- Start Gallery -->
+	<div class="gallery-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Gallery</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+					</div>
+				</div>
+			</div>
+			<div class="tz-gallery">
+				<div class="row">
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery-img-01.jpg">
+							<img class="img-fluid" src="images/gallery-img-01.jpg" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery-img-02.jpg">
+							<img class="img-fluid" src="images/gallery-img-02.jpg" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery-img-03.jpg">
+							<img class="img-fluid" src="images/gallery-img-03.jpg" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery-img-04.jpg">
+							<img class="img-fluid" src="images/gallery-img-04.jpg" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery-img-05.jpg">
+							<img class="img-fluid" src="images/gallery-img-05.jpg" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery-img-06.jpg">
+							<img class="img-fluid" src="images/gallery-img-06.jpg" alt="Gallery Images">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Gallery -->
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<h3>Popular Restaurants</h3>
+					<ul class="_1w9D3 link-list">
+						<li class="_2JILy"><a class="_3TjLz b-Hy9" href="/city/dausa">KFC</a></li>
+						<li class="_2JILy"><a class="_3TjLz b-Hy9" href="/city/dausa">Barbeque</a></li>
+						<li class="_2JILy"><a class="_3TjLz b-Hy9" href="/city/dausa">Dominos</a></li>
+						<li class="_2JILy"><a class="_3TjLz b-Hy9" href="/city/dausa">Pizza Hut</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h3>Popular Cities</h3>
+					<ul class="_1w9D3 link-list">
+						<li class="_2JILy"><a class="_3TjLz b-Hy9" href="/city/dausa">KFC</a></li>
+						<li class="_2JILy"><a class="_3TjLz b-Hy9" href="/city/dausa">Barbeque</a></li>
+						<li class="_2JILy"><a class="_3TjLz b-Hy9" href="/city/dausa">Dominos</a></li>
+						<li class="_2JILy"><a class="_3TjLz b-Hy9" href="/city/dausa">Pizza Hut</a></li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name">
+							All Rights Reserved. &copy; 2018 <a href="#">Live Dinner Restaurant</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+	<!-- End Footer -->
+
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+
+	<!-- ALL JS FILES -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- ALL PLUGINS -->
+	<script src="js/jquery.superslides.min.js"></script>
+	<script src="js/images-loded.min.js"></script>
+	<script src="js/isotope.min.js"></script>
+	<script src="js/baguetteBox.min.js"></script>
+	<script src="js/form-validator.min.js"></script>
+	<script src="js/contact-form-script.js"></script>
+	<script src="js/custom.js"></script>
 </body>
-
 </html>
