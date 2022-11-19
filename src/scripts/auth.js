@@ -47,7 +47,8 @@ function registerUser(user) {
                             beforeSend: function (xhr) {
                                 xhr.setRequestHeader("Authorization", 'Bearer ' + accessToken);
                             },
-                            data: userParams,                            
+                            data: JSON.stringify(userParams),
+                            dataType: 'json',
                             cache: false,
                             async: true,
                             contentType: 'application/json',
